@@ -157,8 +157,10 @@
 
 <footer class="footer">
     <div class="container text-center">
-        <p>© Mahmud Isaacs | 2025</p>
+        <p>© Mahmud Isaacs | <span id="copyright-year">2026</span></p>
     </div>
 </footer>
+
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 
 </html>

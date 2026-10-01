@@ -277,17 +277,22 @@ body.light hr.separator {
 
 @media (min-width: 992px) {
   .col-lg-4.bg {
-    display: flex;
-    justify-content: center;  /* Horizontally center the image */
-    align-items: flex-start;  /* Align to the top */
-    height: 100vh;            /* Fill the viewport height */
+    /* Bootstrap's .d-lg-block forces display:block !important here, so
+       flex alignment can't be used to position the image — absolute
+       positioning against this box instead. */
+    position: fixed !important;
+    overflow: hidden;         /* Keep the image within the rounded card */
   }
 
   .main-img {
-    width: 80%;   /* Increase width to make the image bigger */
-    height: auto; /* Maintain aspect ratio */
-    margin-top: 10vh;  /* Adjust top margin to move image down slightly */
-    margin-left: 10%;  /* Fine-tune position to the right */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    max-width: 85%;   /* Close to the cutout's native resolution — avoids upscale blur */
+    max-height: 90%;
   }
 }
 
