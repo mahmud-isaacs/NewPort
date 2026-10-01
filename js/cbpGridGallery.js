@@ -79,8 +79,9 @@
 		this.ctrlPrev = this.el.querySelector( 'section.slideshow > nav > span.nav-prev' );
 		this.ctrlNext = this.el.querySelector( 'section.slideshow > nav > span.nav-next' );
 		this.ctrlClose = this.el.querySelector( 'section.slideshow > nav > span.nav-close' );
-		// init masonry grid
-		this._initMasonry();
+		// Masonry layout disabled — the grid is laid out declaratively with CSS Grid
+		// (bento layout for featured/regular cards), which Masonry's own absolute
+		// positioning was overriding and breaking.
 		// init events
 		this._initEvents();
 	};
